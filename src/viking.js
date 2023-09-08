@@ -41,7 +41,20 @@ const viking = new Viking("Gundar", 10, 15);
 console.log(viking);
 
 // Saxon
-class Saxon {}
+class Saxon extends Soldier {
+
+    receiveDamage(damage) {
+        super.receiveDamage(damage);
+
+        if (this.health > 0) {
+            return `A Saxon has received ${damage} points of damage`;
+        }
+        else {
+            return `A Saxon has died in combat`;
+        }
+    }
+
+}
 
 // War
 class War {}
